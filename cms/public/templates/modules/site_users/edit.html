@@ -1,0 +1,41 @@
+<h1>{$page_title}</h1>
+
+<form id="site_user_edit" action="{?_MODULES_}site_users/edit/{$user.id}" method="POST" enctype="multipart/form-data">
+
+	<div id="infobox"{if (!empty($form_error))} class="error" style="display:block;"{/if}>{$form_error}</div>
+
+	<div id="template_fields">
+		<!--
+		<div class="formfield">
+			<div class="formtitle"><label><input name="active" type="checkbox"{if (!empty($user.active))} checked{/if}> Активен</label></div>
+			<div class="notice"><strong>Внимание!</strong> Для привязки кода и отправки письма используйте кнопку <img src="{?_CMS_}images/off.png" align="top" /> в списке пользователей</div>
+		</div>
+		-->
+		<table width="100%" cellspacing="10">
+			<colgroup>
+				<col width="124"></col>
+				<col width="*"></col>
+			</colgroup>
+			<tbody>
+				<tr>
+					<td align="right"><b>Зарегистрирован:</b></td>
+					<td>{$user.c_date}</td>
+				</tr>
+				<tr>
+					<td align="right"><b>Отредактирован:</b> </td>
+					<td>{$user.m_date}</td>
+				</tr>
+			</tbody>
+		</table>
+		<div class="formfield">
+			<div class="formtitle">E-mail:</div>
+			<div><input id="object_name" name="name" type="text" value="{$user.name}" maxlength="100" required /></div>
+		</div>
+		{$template_fields}
+	</div>
+
+	<div class="formfield">
+		<input id="site_user_edit_btn" type="submit" value="Сохранить объект" /> &nbsp;
+		<input type="button" class="error" value="Отмена" onclick="top.location = '{?_MODULES_}site_users';" />
+	</div>
+</form>

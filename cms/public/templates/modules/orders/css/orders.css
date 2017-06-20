@@ -1,0 +1,173 @@
+#date_s, #date_e {
+  width:90px;
+  text-align:center;
+}
+
+#filter_form .search_row {
+   margin-bottom:15px;
+}
+
+#orders_table .infotable td {
+  font-size:11px;
+  overflow:hidden;
+}
+
+#orders_table .remove_order {
+  display:block;
+  margin-top:20px;
+  text-align:center;
+}
+
+#orders_table tr.birthday td {
+  background-color:#FFCCCC;
+}
+
+#orders_table .client{
+  margin-bottom:10px;
+}
+
+#orders_table .address {
+  margin:10px 0;
+}
+
+#orders_table .pay {
+  margin-top:10px;
+}
+
+#orders_table .added {
+  margin-top:10px;
+}
+
+.orders_status {
+  margin:20px 0;
+}
+
+#orders_status {
+  width:170px;
+  background-color:#fff;
+}
+
+#orders_table ul {
+  padding:0;
+  margin:0;
+  list-style:none;
+}
+
+#orders_table .item {
+  position:relative;
+  height:20px;
+  font-size:10px;
+  border-bottom:1px dotted #c0c0c0;
+}
+
+#orders_table .item.last {
+  border:none;
+}
+
+#orders_table .item .name, #orders_table .item .price {
+  position:absolute;
+  top:0;
+  height:20px;
+}
+
+#orders_table .item .name {
+  left:0;
+  width:270px;
+  overflow:hidden;
+  margin-right:2px;
+}
+
+#orders_table .item .price {
+  right:0;
+  height:20px;
+  padding-left:5;
+}
+
+.old_price {
+  text-decoration:line-through;
+  color:red;
+}
+
+.discount {
+  color:green;
+}
+
+/* Order
+*******************************************************/
+
+.block {
+  margin:20px 0;
+}
+
+.blocks_container .block {
+  float:left;
+  width:385px;
+  margin-right:20px;
+}
+
+.blocks_container .block.last {
+  margin-right:0;
+}
+
+.block .block_in {
+  position:relative;
+  font-size:12px;
+  color:#000;
+}
+
+.block .block_in .row {
+  margin:5px 0;
+}
+
+.block .block_in .comment {
+  font:12px/24px Verdana;
+  color:#555;
+}
+
+.block .block_in .order_status {
+  position:absolute;
+  top:20px;
+  right:15px;
+}
+
+.block .block_in .order_status select {
+  width:170px;
+}
+
+#order_items_table tr.total td {
+  text-align:right;
+  font:bold 12px/24px Verdana;
+}
+
+.medium_weight {
+  margin-top:3px;
+  font:11px/18px Verdana;
+  color:#aaa;
+}
+
+.part_number {
+  margin-top:3px;
+  font:11px/18px Verdana;
+}
+
+.birth {
+  margin:20px;
+  font-size:20px;
+  text-align:center;
+  color:red;
+}
+
+#pay_type, #payed{
+  width:250px;
+}
+
+/* ׀ופונאכû
+******************************************************************************/
+#order_user_referals_win ul {
+  list-style:decimal;
+  padding-left:35px;
+}
+
+#order_user_referals_win ul li {
+  margin-bottom:4px;
+}

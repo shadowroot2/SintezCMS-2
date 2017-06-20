@@ -1,0 +1,5 @@
+Allow from ALL
+#<Files ~ ".*\.(php|html)$">
+#    Order allow,deny
+#    Deny from all
+#</Files>

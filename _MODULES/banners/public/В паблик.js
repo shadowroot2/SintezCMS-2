@@ -1,0 +1,1 @@
+// ПЕРЕХОДЫ ПО БАННЕРАМ$('.banner').click(function(){	$.getJSON('/ajax/a/banner_click/'+$(this).attr('rel'));});

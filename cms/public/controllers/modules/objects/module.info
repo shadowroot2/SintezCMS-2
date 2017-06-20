@@ -1,0 +1,6 @@
+name:Объекты
+description:Основной модуль для работы с объектами модели
+version:3.2
+autor:ShadoW
+sort:1
+actions:Добавить объект->add; Список объектов->

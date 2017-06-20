@@ -1,0 +1,100 @@
+<ul id="reports_menu">
+{foreach ($reports_menu as $m)}
+	<li{if ($m.set)} class="set"{/if}><a href="{?_MODULES_}{$m.url}">{$m.name}</a></li>
+{/foreach}
+</ul>
+
+<h1>{$page_title}</h1>
+
+<form id="filter_form" method="GET">
+	<div class="block search_form" style="width:800px">
+		<div class="header">Фильтр по лидерам продаж товаров паратнеров</div>
+		<div class="block_in">
+			<div class="search_row">
+				Отчет за период c <input id="date_s" type="text" name="date_s"  value="{$date_s}" /> по <input id="date_e" type="text" value="{$date_e}" name="date_e" value="" /> &nbsp;&nbsp;&nbsp;
+				<a href="{?_MODULES_}orders/reports/partners?city={$city_id}&partner={$partner_id}&period=day">За день</a> &nbsp;
+				<a href="{?_MODULES_}orders/reports/partners?city={$city_id}&partner={$partner_id}&period=week">За неделю</a> &nbsp;
+				<a href="{?_MODULES_}orders/reports/partners?city={$city_id}&partner={$partner_id}&period=mounth">За месяц</a> &nbsp;
+				<a href="{?_MODULES_}orders/reports/partners?city={$city_id}&partner={$partner_id}&period=year">За год</a>
+			</div>
+			<div>
+				{if (!$personal)}
+					Город: <select id="report_city" name="city" style="width:200px">
+					{if (!empty($citys))}
+						{foreach ($citys as $c)}
+							<option value="{$c.id}"{if ($c.set)} selected{/if}>{$c.name}</option>
+						{/foreach}
+					{/if}
+					</select>
+				{/if}
+				Партнер: <select name="partner">
+					<option value="">Выберите партнера...</option>
+					{if (!empty($partners))}
+						{foreach ($partners as $p)}
+							<option value="{$p.id}"{if ($p.set)} selected{/if}>{$p.name}</option>
+						{/foreach}
+					{/if}
+				</select>
+				<input type="submit" value="Составить отчет" />
+			</div>
+		</div>
+	</div>
+
+	{if (!empty($items))}
+	<div class="filter_block" style="width:800px; margin-top:20px;">
+		<div style="font-size:14px;">Найдено товаров: <b id="orders_total_count">{$items_count}</b></div>
+		<div style="position:absolute; right:0; top:5px;">
+			На страницу <select class="onpage" name="perpage" style="width:60px; text-align:center; background-color:#fff;" onchange="$('#filter_form').submit();">
+			{if (!empty($perpages))}
+				{foreach($perpages as $key)}
+					<option value="{$key}"{if ($key == $perpage)} selected{/if}>{$key}</option>
+				{/foreach}
+			{/if}
+			</select>
+		</div>
+	</div>
+	{/if}
+</form>
+
+{if (!empty($items))}
+	<div id="users_report_table" class="infotable_container" style="width:800px;">
+		<table class="infotable" width="100%" cellspacing="1">
+			<colgroup>
+				<col width="54"></col>
+				<col width="*"></col>
+				<col width="160"></col>
+				<col width="160"></col>
+				<col width="160"></col>
+			</colgroup>
+			<thead>
+				<tr>
+					<th>Изобр.</th>
+					<th>Название</th>
+					<th class="sort {$partners_sort_fields.orders_count.sort}"><a href="{?_MODULES_}orders/reports/partners{$page_prefix}orderby=orders_count&sort={if ($partners_sort_fields.orders_count.sort == 'desc')}asc{else}desc{/if}">Кол-во зак.</a></th>
+					<th class="sort {$partners_sort_fields.count.sort}"><a href="{?_MODULES_}orders/reports/partners{$page_prefix}orderby=count&sort={if ($partners_sort_fields.count.sort == 'desc')}asc{else}desc{/if}">Кол-во тов.</a></th>
+					<th class="sort {$partners_sort_fields.sum.sort}"><a href="{?_MODULES_}orders/reports/partners{$page_prefix}orderby=sum&sort={if ($partners_sort_fields.sum.sort == 'desc')}asc{else}desc{/if}">Сумма зак.</a></th>
+				</tr>
+			</thead>
+			<tbody>
+			{foreach($items as $i)}
+				<tr>
+					<td align="center"><a class="fancy" href="{?_UPLOADS_}{$i.image}" target="_blank"><img src="/cms/image/s/{$i.image}/w/54/square" /></a></td>
+					<td><a href="{$i.url}" target="_blank">{$i.name}</a></td>
+					<td align="right">{$i.orders_count}</td>
+					<td align="right">{$i.count}</td>
+					<td align="right">{$i.sum} тг.</td>
+				</tr>
+			{/foreach}
+			</tbody>
+		</table>
+	</div>
+
+	{if (!empty($pages))}
+		<ul class="pagination">
+			<li class="noactive" style="width:80px;">Страницы:</li>
+			{foreach($pages as $pg=>$p)}
+				<li{if (!empty($p.set))} class="active"{/if}><a href="{?_MODULES_}orders/reports/partners{$page_prefix}pg={$pg}">{$pg}</a></li>
+			{/foreach}
+		</ul>
+	{/if}
+{/if}

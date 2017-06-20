@@ -1,0 +1,6 @@
+name:Кэширование
+description:Основной модуль управления кэшем
+version:2.1
+autor:ShadoW
+sort:906
+actions:Состояние кэша->;Очистка кэша->clear

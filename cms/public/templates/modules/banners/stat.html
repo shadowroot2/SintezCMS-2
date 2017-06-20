@@ -1,0 +1,57 @@
+<h1>{$page_title}</h1>
+
+<form id="filter_form" name="filter" action="{?_MODULES_}banners" method="get">
+	<div class="block search_form">
+		<div class="header">Фильтр</div>
+		<div class="block_in">
+			Период с <input id="date_s" class="dates" type="text" name="date_s" value="{$date_s}" readonly="readonly" /> по
+			<input id="date_e" class="dates" type="text" name="date_e" value="{$date_e}" readonly="readonly" />&nbsp;
+			<input type="submit" value="Сформировать" />
+		</div>
+	</div>
+	<div class="filter_block">Всего баннеров: <b>{$total_count}</b></div>
+</form>
+
+{if ($total_count > 0)}
+	<div class="infotable_container">
+		<table cellspacing="1" class="infotable">
+			<colgroup>
+				<col width="*" />
+				<col width="90" />
+				<col width="110" />
+				<col width="110" />
+				<col width="80" />
+			</colgroup>
+			<thead>
+				<tr>
+					<th>Баннер</th>
+					<th>Статус</th>
+					<th>Показов</th>
+					<th>Кликов</th>
+					<th>CTR%</th>
+				</tr>
+			</thead>
+			<tbody>
+			{foreach ($banners_stat as $bs)}
+				<tr>
+					<td>
+						<a href="{?_MODULES_}objects/edit/{$bs.banner_id}" title="Редактировать">{$banners[$bs['banner_id']]['name']}</a>
+					</td>
+					<td align="center">
+					{if ($banners[$bs['banner_id']]['active'])}
+						<span class="active">Активен</span>
+					{else}
+						<span class="no_active">Отключен</span>
+					{/if}
+					</td>
+					<td align="right">{?number_format($bs.shows, 0, '.', ' ')}</td>
+					<td align="right">{?number_format($bs.clicks, 0, '.', ' ')}</td>
+					<td align="center">{?number_format(((intval($bs.clicks) / intval($bs.shows)) * 100), 2, '.', ' ')}</td>
+				</tr>
+			{/foreach}
+			</tbody>
+		</table>
+	</div>
+{else}
+	<div class="nothink">По вашем запросу ничего не найдено...</div>
+{/if}

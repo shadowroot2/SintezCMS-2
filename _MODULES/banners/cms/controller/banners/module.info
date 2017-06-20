@@ -1,0 +1,6 @@
+name:Баннеры
+description:Модуль для отображения статистики по баннерам
+version:1.0
+autor:ShadoW
+sort:150
+actions:Статистика по баннерам->;Очистка базы->clear

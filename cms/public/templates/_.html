@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+	<!--[if IE]><script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+</head>
+
+<body lang="ru">
+	<div id="wrapper">
+		<header id="header">
+			<a href="{?_CMS_}"><div id="cms_name"><span title="Site Integrated Zest">Sintez</span>СMS</div></a>
+			<div id="user_head">Вы вошли как <strong>{?Core::$_data.cms_auth.name}</strong> &nbsp;&nbsp;&nbsp; <a href="/">Перейти на сайт</a> | <a href="{?_CMS_}profile">Профиль</a> | <a href="{?_CMS_}exit">Выйти</a></div>
+		</header>
+
+		<section id="middle">
+			<div id="container">
+				<section id="content">
+					#CONTENT#
+				</section>
+			</div>
+
+			<aside id="sideLeft">
+				<section class="left_inside">
+					<nav class="left_menu">
+					{if (is_array($cms_menu))}
+						{foreach ($cms_menu as $k=>$m)}
+							<h3{if ($m.set)} class="set"{/if} alt="{?$k}"><a href="#">{$m.name}</a></h3>
+							<div>
+								{if (isset($m.actions) && is_array($m.actions))}
+									{foreach ($m.actions as $sm)}
+									<div class="menu_actions">
+										<a href="{?_CMS_}modules/{$m.route}/{$sm.route}"{if ($sm.set)} style="font-weight:bold"{/if}>{$sm.name}</a>
+									</div>
+									{/foreach}
+								{/if}
+							</div>
+						{/foreach}
+					{/if}
+					</nav>
+				</section>
+			</aside>
+		</section>
+
+		<footer id="footer">
+			<span title="Site Integrated Zest"><strong><span style="color:#FF0000">Sintez</span>CMS</strong> v.2.0</span> &nbsp; &copy; 2011&mdash;{?date('Y')} by <a href="mailto:{?Core::EMAIL}">ShadoW</a>
+		</footer>
+	</div>
+</body>
+</html>

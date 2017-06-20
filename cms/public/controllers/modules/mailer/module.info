@@ -1,0 +1,6 @@
+name:Рассылка писем
+description:Модуль рассылки писем
+version:2.0
+autor:ShadoW
+sort:900
+actions:Создать рассылку->;Шабоны писем->templates

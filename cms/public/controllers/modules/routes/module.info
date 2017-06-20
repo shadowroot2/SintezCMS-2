@@ -1,0 +1,6 @@
+name:ЧПУ маршруты
+description:Основной модуль системы, эмулирует работу .htaccess файла
+version:2.0
+autor:ShadoW
+sort:903
+actions:Добавить маршрут->add;Все маршруты->

@@ -1,0 +1,49 @@
+<h1>{$page_title}</h1>
+
+[<div class="error">{$error}</div>]
+<div style="margin-top:15px">Состояние: {if ($caching)}<span class="ok">Включено</span>{else}<span class="error">Отключено</span>{/if}</div>
+<div class="cache_info">
+	[<div>Данные и шаблоны: <b>{$cache_size}</b></div>]
+	[<div>Кэш изображений: <b>{$images_cache_size}</b></div>]
+</div>
+
+<div class="cache_info">
+	<div>Использование Memcached: {if ($memcached)}<span class="ok">Включено</span>{else}<span class="error">Выключено</span>{/if}</div>
+	{if ($memcached)}
+		<div>
+			<div>Версия сервера: <b>{$memcached_version}</b></div>
+			{if (!empty($memcached_stat))}
+				<div>Состояние кэша:</div>
+				<ul id="memcached_params">
+					<li>ID процесса сервера: <b>{$memcached_stat.pid}</b></li>
+					<li>Время аптайма: <b>{?round(($memcached_stat.uptime / 60 / 60))} часов</b></li>
+					{!$MBSize  = (real) $memcached_stat.limit_maxbytes / (1024*1024)}
+					{!$MBUSize  = (real) $memcached_stat.bytes / (1024*1024)}
+					<li style="margin-top:15px">Размер хранилища: <b>{?round($MBSize, 2)} Мб.</b></li>
+					<li>Используется: <b>{?round($MBUSize, 2)} Мб.</b></li>
+					<li>Количество записей в хранилище: <b>{?number_format($memcached_stat.curr_items, 0, '.', ' ')}</b></li>
+					<li>Количество записей со старта: <b>{?number_format($memcached_stat.total_items, 0, '.', ' ')}</b></li>
+					<li style="margin-top:15px">Количество текущих соединений: <b>{$memcached_stat.curr_connections}</b></li>
+					<li>Количество соединений со старта сервера: <b>{?number_format($memcached_stat.total_connections, 0, '.', ' ')}</b></li>
+					<li  style="margin-top:15px">Суммарное время использования: <b>{?ceil($memcached_stat.rusage_user)} сек.</b></li>
+					<li>Суммарное системное время процесса: <b>{?ceil($memcached_stat.rusage_system)} сек.</b></li>
+					<li style="margin-top:15px">Кумулятивное число запросов get: <b>{?number_format($memcached_stat.cmd_get, 0, '.', ' ')}</b></li>
+					<li>Кумулятивное число запросов set: <b>{?number_format($memcached_stat.cmd_set, 0, '.', ' ')}</b></li>
+
+					{!$percCacheHit  = ((real) $memcached_stat.get_hits / (real) $memcached_stat.cmd_get * 100)}
+					{!$percCacheHit  = round($percCacheHit, 2)}
+					{!$percCacheMiss = round((100 - $percCacheHit), 2)}
+
+					<li>Количество запрошенных и найденных ключей: <b>{?number_format($memcached_stat.get_hits, 0, '.', ' ')} ({?$percCacheHit}%)</b></li>
+					<li>Количество запрошенных но не найденых ключей: <b>{?number_format($memcached_stat.get_misses, 0, '.', ' ')} ({?$percCacheMiss}%)</b></li>
+
+					{!$MBRead  = (real) $memcached_stat.bytes_read / (1024*1024)}
+					<li style="margin-top:15px">Количество считанных данных: <b>{?round($MBRead, 2)} Мб.</b></li>
+					{!$MBWrite = (real) $memcached_stat.bytes_written / (1024*1024)}
+					<li>Количество записанных данных: <b>{?round($MBWrite, 2)} Мб.</b></li>
+					<li>Количество удаленных валидных ключей для освобождения места новым: <b style="color:red;">{$memcached_stat.evictions}</b></li>
+				</ul>
+			{/if}
+		</div>
+	{/if}
+</div>

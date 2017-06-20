@@ -1,0 +1,129 @@
+.mupload_warning {
+  margin:10px 0;
+  font-style:italic;
+  color:#E90101;
+}
+
+#mupload_photos_config input {
+  text-align:center;
+}
+
+#muploadDesc, #muploadClear, #muploadContainer, #muploadInfo {
+  width:600px;
+  display:none;
+}
+
+#muploadDesc {
+  display:block;
+}
+
+#muploadControl {
+  position:relative;
+  width:600px;
+  margin:20px 0;
+}
+
+.swfupload {
+  position:absolute;
+  top:0;
+  left:0;
+}
+
+#muploadClear {
+  text-align:right;
+}
+
+#muploadInfo {
+  color:red;
+}
+
+#muploadContainer {
+  list-style:none;
+  margin:10px 0;
+}
+
+#muploadContainer li {
+  display:block;
+  position:relative;
+  height:50px;
+  padding:10px;
+  margin-bottom:10px;
+  background-color:#F9F9F9;
+  border:1px solid #E9E9E9;
+  border-radius:7px;
+  box-shadow:0 0 5px 0 #E9E9E9;
+}
+
+#muploadContainer li:even{
+  background-color:#fff !important;
+}
+
+#muploadContainer li .mupload_item_name {
+  position:absolute;
+  top:10px;
+  left:70px;
+  width:400px;
+  height:20px;
+  line-height:20px;
+  white-space:nowrap;
+}
+
+#muploadContainer li .mupload_item_status {
+  margin-top:10px;
+  font-size:11px;
+}
+
+#muploadContainer li .mupload_file_size {
+  position:absolute;
+  top:27px;
+  right:50px;
+  width:75px;
+  overflow:hidden;
+  text-align:right;
+}
+
+#muploadContainer li .mupload_item_remove {
+  position:absolute;
+  top:27px;
+  right:15px;
+  width:16px;
+  height:16px;
+}
+
+#muploadContainer li .mupload_item_progress {
+  display:none;
+  margin-top:10px;
+  height:15px;
+  width:300px;
+  border:1px solid #0180AF;
+  box-shadow:0 0 10px 0 #C0C0C0;
+  border-radius:3px;
+  background-color:#fff;
+}
+
+#muploadContainer li .mupload_item_progress div {
+  width:1%;
+  height:100%;
+  background:#01ADEC;
+  background:-moz-linear-gradient(90deg, #0180AF, #01ADEC);
+  background:-webkit-linear-gradient(90deg, #01ADEC, #0180AF);
+  background:-o-linear-gradient(90deg, #01ADEC, #0180AF);
+  background:-ms-linear-gradient(90deg, #01ADEC, #0180AF);
+  background:linear-gradient(90deg, #01ADEC, #0180AF);
+}
+
+.mupload_html5_dragdrop {
+  margin-bottom:15px;
+  padding:30px 0;
+  border:2px dashed #c0c0c0;
+  border-radius: 5px;
+  font-size:16px;
+  text-align:center;
+  color:#c0c0c0;
+}
+
+.mupload_dragdrop_light{
+  border:2px dashed #01ADEC;
+  background-color:#F0F0F0;
+  color:#000;
+}

@@ -1,0 +1,72 @@
+.actions {
+  margin-top:10px;
+}
+
+#templates_list {
+  width:700px;
+}
+
+#templates_list .additional a {
+  color:#464646;
+}
+
+#template_add, #template_edit {
+  width:550px;
+}
+
+#template_add .infotable_container, #template_edit .infotable_container {
+  width:550px;
+}
+
+.formfield.additional {
+  margin-bottom:20px;
+}
+
+.formfield.additional label {
+  margin-right:20px;
+}
+
+.formfield.fields {
+  margin-top:20px;
+}
+
+#template_field_form input[type="text"], #template_field_form textarea  {
+  width:350px;
+}
+
+#field_type option:first-child {
+  color:#D7D7D7;
+}
+
+#template_field_form textarea {
+  height:100px;
+}
+
+#template_field_form select {
+  width:370px;
+}
+
+#template_field_form .field_cfg.link {
+  width:70px;
+  text-align:center;
+}
+
+#fild_image_cfg .field_cfg {
+  width:35px !important;
+}
+
+#field_conf_status {
+  margin-top:10px;
+}
+
+a.import {
+  margin-left:20px;
+}
+
+a.edit, a.remove {
+  text-decoration:none;
+}
+
+#template_import_form {
+  margin-top:20px;
+}

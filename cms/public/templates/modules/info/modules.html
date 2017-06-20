@@ -1,0 +1,1 @@
+<h1>{$page_title}</h1>{if (!empty($modules))}<ul class="listing">	{foreach($modules as $m)}	<li>		<h2>{$m.name}</h2>		[<div>Версия: {$m.version}</div>]		[<div>Автор: {$m.autor}</div>]		[<div>Описание: <i>{$m.description}</i></div>]	</li>	{/foreach}</ul>{else}<div class="nothink">Модулей нет...</div>{/if}

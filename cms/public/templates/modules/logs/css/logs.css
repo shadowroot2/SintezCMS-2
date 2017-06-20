@@ -1,0 +1,50 @@
+#filter_form, .infotable_container {
+  width:770px;
+}
+
+.logs_date {
+  width:85px !important;
+  text-align:center !important;
+}
+
+.logs_select {
+  width:170px;
+}
+
+.filter_block {
+  position:relative;
+  height:30px;
+  margin-top:30px;
+  text-align:right;
+}
+
+.filter_block select {
+  width:70px;
+  background-color:#fff;
+  text-align:center;
+}
+
+
+.logstable tr td {
+  padding:2px 7px;
+  font-size:12px;
+}
+
+.confirm_clear {
+  margin-top:30px;
+  font:18px/25px Arial;
+}
+
+.confirm_clear div {
+  margin-bottom:20px;
+}
+
+.confirm_clear input {
+  width:100px;
+}
+
+.cleared {
+  margin:30px 0;
+  font:italic 18px/22px Arial;
+  color:green;
+}

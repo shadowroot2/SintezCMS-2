@@ -1,0 +1,152 @@
+.objects_title {
+  position:relative;
+  height:35px;
+}
+
+.objects_langs {
+  position:absolute;
+  top:0;
+  right:0;
+}
+
+.objects_langs select, .actions_block select, #objects_action {
+   background-color:#fff;
+}
+
+#objects_lang {
+  width:140px;
+}
+
+#clone_count {
+  width:200px;
+}
+
+#search_form .block_in {
+  padding-right:145px;
+}
+
+#search {
+  width:100%;
+}
+
+#seatch_btn {
+  position:absolute;
+  top:20px;
+  right:20px;
+}
+
+#clipboard {
+  width:765px;
+  margin-top:20px;
+  padding:15px;
+  border:1px solid #B7B5B7;
+  background-color:#F1F1F1;
+  border-radius: 9px;
+  box-shadow:0 0 20px 0 #E9E9E9;
+  font-size:14px;
+}
+
+.actions_block {
+  margin-top:20px;
+}
+
+.actions_block .toolbar {
+  position:absolute;
+  top:7px;
+  left:0;
+}
+
+.actions_block .pagesbar {
+  position:absolute;
+  top:0;
+  right:0;
+}
+
+#perpage {
+  width:60px;
+  text-align:center;
+}
+
+.objects_count {
+  margin-top:20px;
+  font-size:14px;
+}
+
+#objects_table.nothink {
+  margin:20px 0;
+  font-size:16px;
+  color:red;
+}
+
+#objects_action {
+  width:175px;
+}
+
+#action_head, #object_add, #object_edit {
+  width:585px;
+}
+
+#object_main_container {
+  margin:20px 0;
+  padding:10px 15px 15px 15px;
+  border:1px solid #D6D4D6;
+  background-color:#eee;
+  border-radius:9px;
+  box-shadow:0 0 20px 0 #E9E9E9;
+}
+
+#object_main_container input, #object_main_container select {
+  background-color:#FAFAFA;
+}
+
+#object_fix_class, #object_template {
+  width:550px;
+}
+
+#template_fields {
+  padding:0 16px 15px 16px;
+}
+
+
+#template_fields input, #template_fields select, #template_fields textarea, #template_fields radio {
+  background-color:#fff;
+  box-shadow: 0 0 10px 0 #E9E9E9;
+}
+
+#template_fields .add_template_fields {
+  display:none;
+  margin-top:20px;
+  border-top:3px dashed #D6D4D6;
+}
+
+a.fancy img {
+  padding:5px;
+  border:1px solid #B7B5B7;
+  box-shadow: 0 0 20px 0 #E9E9E9;
+  background-color:#fff;
+}
+
+a.remove_img {
+  position:absolute;
+  top:-7px;
+  right:-7px;
+  padding:3px;
+  border:1px solid #B7B5B7;
+  box-shadow:0 0 20px 0 #E9E9E9;
+  background-color:#fff;
+}
+
+a.remove_img img {
+  display:block;
+}
+
+a.clone {
+  margin-top:10px;
+}
+
+.google-map-container, .yandex-map-container {
+  margin-top:10px;
+  border:1px solid #B7B5B7;
+  box-shadow:0 0 20px 0 #E9E9E9;
+  border-radius:5px;
+}

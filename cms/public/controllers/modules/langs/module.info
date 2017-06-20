@@ -1,0 +1,6 @@
+name:Языки сайта
+description:Основной модуль для работы с языками системы
+version:2.0
+autor:ShadoW
+sort:902
+actions:Добавить язык->add; Список языков->

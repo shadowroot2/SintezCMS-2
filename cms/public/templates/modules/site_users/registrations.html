@@ -1,0 +1,74 @@
+<h1>{$page_title}</h1>
+
+<form id="filter_form" name="filter" action="{?_MODULES_}site_users/{$form_prefix}" method="GET">
+	<div class="block search_form" style="width:690px">
+		<div class="header">Фильтр по регистрациям</div>
+		<div class="block_in">
+			{if (!$personal)}
+			<select name="city" style="width:200px;">
+				<option value="">Все города</option>
+				{foreach ($citys as $c)}
+				<option value="{$c.name}"{if ($c.set)} selected{/if}>{$c.name}</option>
+				{/foreach}
+			</select>&nbsp;
+			{/if}
+			Период с <input type="text" value="{$date_s}" name="date_s" id="date_s" readonly />	по <input type="text" value="{$date_e}" name="date_e" id="date_e" readonly />&nbsp;
+			<input type="submit" value="Поиск" />
+		</div>
+	</div>
+
+	<div class="filter_block" style="width:800px; margin-top:20px;">
+		<div style="font-size:14px;">Количество регистраций: <b>{$users_count}</b></div>
+		<div style="position:absolute; right:0; top:5px;">
+			На страницу <select class="onpage" name="perpage" style="width:60px; text-align:center; background-color:#fff;" onchange="$('#filter_form').submit();">
+			{if (!empty($perpages))}
+				{foreach($perpages as $key)}
+					<option value="{$key}"{if ($key == $perpage)} selected{/if}>{$key}</option>
+				{/foreach}
+			{/if}
+			</select>
+		</div>
+	</div>
+</form>
+
+{if (!empty($users))}
+	<div id="site_registred_users_table" class="infotable_container" style="width:800px;">
+		<table class="infotable" width="100%" cellspacing="1">
+			<colgroup>
+				<col width="180"></col>
+				<col width="*"></col>
+				<col width="300"></col>
+			</colgroup>
+			<thead>
+				<tr>
+					<th>Дата и время</th>
+					<th>Имя</th>
+					<th>E-mail</th>
+				</tr>
+			</thead>
+			<tbody>
+			{foreach($users as $o)}
+				<tr alt="{$o.id}"{if (empty($o.active))}class="disabled"{/if}>
+					<td align="center">{$o.date}</td>
+					<td>
+						<a href="{?_MODULES_}site_users/edit/{$o.id}">{$o.name}</a>
+					</td>
+					<td>{$o.email}</td>
+				</tr>
+			{/foreach}
+			</tbody>
+		</table>
+	</div>
+
+	{if (!empty($pages))}
+		<ul class="pagination">
+			<li class="noactive" style="width:80px;">Страницы:</li>
+		{foreach($pages as $pg=>$p)}
+			<li{if (!empty($p.set))} class="active"{/if}><a href="{?_MODULES_}site_users/registrations/{$page_prefix}pg={$pg}">{$pg}</a></li>
+		{/foreach}
+		</ul>
+	{/if}
+
+{else}
+	<div style="margin:20px 0; font-size:16px; color:red;">Регистраций за данный период нет...</div>
+{/if}

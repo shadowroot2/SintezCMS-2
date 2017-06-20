@@ -1,0 +1,59 @@
+<ul id="reports_menu">
+{foreach ($reports_menu as $m)}
+	<li{if ($m.set)} class="set"{/if}><a href="{?_MODULES_}{$m.url}">{$m.name}</a></li>
+{/foreach}
+</ul>
+
+<h1>{$page_title}</h1>
+
+{if (!$personal)}
+<form id="order_reports_city_form" method="GET">
+	<div class="block search_form" style="width:300px">
+		<div class="block_in">
+			Город: <select id="order_reports_city" name="city" style="width:200px">
+			{if (!empty($citys))}
+				{foreach ($citys as $c)}
+					<option value="{$c.id}"{if ($c.set)} selected{/if}>{$c.name}</option>
+				{/foreach}
+			{/if}
+			</select>
+		</div>
+	</div>
+</form>
+{/if}
+
+{if (!empty($users_report))}
+	<div id="users_report_table" class="infotable_container" style="width:800px;">
+		<table class="infotable" width="100%" cellspacing="1">
+			<colgroup>
+				<col width="*"></col>
+				<col width="160"></col>
+				<col width="160"></col>
+				<col width="160"></col>
+				<col width="160"></col>
+			</colgroup>
+			<thead>
+				<tr>
+					<th>Пользователь</th>
+					<th>Группа</th>
+					<th class="sort {$users_sort_fields.count.sort}"><a href="{?_MODULES_}orders/reports/users/?orderby=count&sort={if ($users_sort_fields.count.sort == 'desc')}asc{else}desc{/if}">Кол-во зак.</a></th>
+					<th class="sort {$users_sort_fields.sum.sort}"><a href="{?_MODULES_}orders/reports/users/?orderby=sum&sort={if ($users_sort_fields.sum.sort == 'desc')}asc{else}desc{/if}">Сумма зак.</a></th>
+					<th class="sort {$users_sort_fields.avg.sort}"><a href="{?_MODULES_}orders/reports/users/?orderby=avg&sort={if ($users_sort_fields.avg.sort == 'desc')}asc{else}desc{/if}">Ср.сумма зак.</a></th>
+				</tr>
+			</thead>
+			<tbody>
+			{foreach($users_report as $ur)}
+				<tr>
+					<td><a href="{$ur.user_url}"><b>{$ur.user_name}</b></a></td>
+					<td align="center">{$ur.user_group}</td>
+					<td align="right">{$ur.count}</td>
+					<td align="right">{$ur.sum} тг.</td>
+					<td align="right">{$ur.avg} тг.</td>
+				</tr>
+			{/foreach}
+			</tbody>
+		</table>
+	</div>
+{else}
+	<div style="margin:20px 0; font-size:16px; color:red;">Отчет не построен...</div>
+{/if}

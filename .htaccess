@@ -1,0 +1,29 @@
+Options -Indexes
+RewriteEngine on 
+RewriteBase /
+
+#RewriteCond %{HTTP_HOST} ^www\.site\.dev$
+#RewriteRule ^(.*)$ http://site.dev/$1 [R=301,L]
+
+RewriteCond %{THE_REQUEST} ^[A-Z]{3,9}\ /index\.html\ HTTP/
+RewriteRule ^index\.html$ / [R=301,L]
+RewriteCond %{THE_REQUEST} ^[A-Z]{3,9}\ /index\.php\ HTTP/
+RewriteRule ^index\.php$ / [R=301,L]
+
+RewriteCond %{REQUEST_URI} !^/cms/
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond %{REQUEST_FILENAME} !-l
+
+RewriteRule ^(.*)$ index.php?route=$1 [L,QSA]
+
+php_flag magic_quotes_gpc Off
+php_flag allow_url_fopen Off
+php_value upload_max_filesize 5M
+php_value post_max_size 5M
+php_value max_execution_time 30
+php_value max_input_time 30
+php_flag register_globals Off
+php_flag safe_mode Off
+
+php_value allow_call_time_pass_reference On

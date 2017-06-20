@@ -1,0 +1,53 @@
+#filter_form {
+  width:515px;
+}
+
+#filter_form  .dates {
+  width:90px;
+}
+
+#filter_form .filter_block {
+ height:25px;
+ margin:20px 0;
+ font-size:14px;
+ line-height:25px;
+}
+
+.infotable_container {
+  width:660px;
+}
+
+.infotable {
+  width:100%;
+}
+
+.infotable_container span.active {
+  color:green;
+}
+
+.infotable_container span.no_active {
+  color:red;
+}
+
+.cache_info div {
+  margin:10px 0;
+}
+
+.confirm_clear {
+  font:18px/25px Arial;
+  margin-top:30px;
+}
+
+.confirm_clear div {
+  margin-bottom:20px;
+}
+
+.confirm_clear input {
+  width:100px;
+}
+
+.cleared {
+  margin:30px 0;
+  font:italic 18px/22px Arial;
+  color:green;
+}

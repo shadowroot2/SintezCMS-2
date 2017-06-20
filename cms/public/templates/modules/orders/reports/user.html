@@ -1,0 +1,15 @@
+<ul id="reports_menu">
+{foreach ($reports_menu as $m)}
+	<li{if ($m.set)} class="set"{/if}><a href="{?_MODULES_}{$m.url}">{$m.name}</a></li>
+{/foreach}
+</ul>
+
+<h1>{$page_title}</h1>
+{if (!empty($user_orders))}
+	<script type="text/javascript">
+		var _CHART_ = {$user_orders};
+	</script>
+	<div id="chart"></div>
+{else}
+	<div class="nothink">У пользователя нет выполненных заявок</div>
+{/if}

@@ -1,0 +1,53 @@
+/* Меню
+*******************************************************************************/
+#reports_menu {
+  margin-bottom:20px;
+  list-style:none;
+}
+
+#reports_menu:after {
+  content: '.';
+  display: block;
+  clear: both;
+  visibility: hidden;
+  height: 0;
+}
+
+#reports_menu li {
+  float:left;
+  margin-right:5px;
+  padding:5px 10px;
+  border:1px solid #FDFDFD;
+  -moz-border-radius: 7px;
+  -webkit-border-radius: 7px;
+  -khtml-border-radius: 7px;
+}
+
+#reports_menu li.set, #reports_menu li:hover {
+  background-color:#EFEFEF;
+  border:1px solid #EFEFEF;
+  border-radius: 7px;
+}
+
+#reports_menu li.set a {
+  font-weight:bold;
+  color:#000;
+}
+
+/* Фильтр
+*******************************************************************************/
+#filter_form .search_row {
+   margin-bottom:15px;
+}
+
+#date_s, #date_e {
+  width:90px;
+  text-align:center;
+}
+
+.infotable td {
+  font-size:12px;
+  overflow:hidden;
+  height:15px;
+  padding:6px;
+}

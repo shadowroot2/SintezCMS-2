@@ -1,0 +1,15 @@
+.actions {
+  margin-top:10px;
+}
+
+.infotable_container {
+  width:400px;
+}
+
+#lang_add, #lang_edit {
+  width:350px;
+}
+
+#lang_add input[type="text"], #lang_edit input[type="text"] {
+  width:300px;
+}

@@ -1,0 +1,6 @@
+name:Пользователи сайта
+description:Модуль для работы с пользователями сайта
+version:2.0
+autor:ShadoW
+sort:120
+actions:Список пользователей->;Отчет по регистрациям->registrations

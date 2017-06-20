@@ -1,0 +1,5 @@
+name:О системе
+version:2.0
+autor:ShadoW
+sort:1000
+actions:Платформа->platform;Ядро системы->core;Список модулей->modules

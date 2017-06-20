@@ -1,0 +1,65 @@
+<h1>{$page_title}</h1>
+
+<form id="filter_form" name="filter" action="{?_MODULES_}site_users/logins" method="GET">
+	<div class="block search_form" style="width:690px">
+		<div class="header">Фильтр по посетителям</div>
+		<div class="block_in">
+			{if (!$personal)}
+			<select name="city" style="width:200px;">
+				<option value="">Все города</option>
+				{foreach ($citys as $c)}
+				<option value="{$c.name}"{if ($c.set)} selected{/if}>{$c.name}</option>
+				{/foreach}
+			</select>&nbsp;
+			{/if}
+			Период с <input type="text" value="{$date_s}" name="date_s" id="date_s" readonly />	по <input type="text" value="{$date_e}" name="date_e" id="date_e" readonly />&nbsp;
+			<input type="submit" value="Поиск" />
+		</div>
+	</div>
+
+	<div class="filter_block" style="width:800px; margin-top:20px;">
+		<div style="font-size:14px;">Количество посетителей: <b>{$users_count}</b></div>
+	</div>
+</form>
+
+{if (!empty($users))}
+	<div id="site_registred_users_table" class="infotable_container" style="width:800px;">
+		<table class="infotable" width="100%" cellspacing="1">
+			<colgroup>
+				<col width="*"></col>
+				<col width="250"></col>
+				<col width="180"></col>
+				<col width="130"></col>
+			</colgroup>
+			<thead>
+				<tr>
+					<th>Имя</th>
+					<th>E-mail</th>
+					<th>Город</th>
+					<th>Группа</th>
+				</tr>
+			</thead>
+			<tbody>
+			{foreach($users as $o)}
+				<tr alt="{$o.id}"{if (empty($o.active))}class="disabled"{/if}>
+					<td>
+						<a href="{?_MODULES_}site_users/edit/{$o.id}">{$o.name}</a>
+					</td>
+					<td>
+						{if (filter_var($o.email, FILTER_VALIDATE_EMAIL))}
+							<a href="mailto:{$o.email}" title="Написать">{$o.email}</a>
+						{else}
+							<i style="color:#c0c0c0;">{$o.email}</i>
+						{/if}
+					</td>
+					<td align="center">{$o.city}</td>
+					<td align="center">{$o.group}</td>
+				</tr>
+			{/foreach}
+			</tbody>
+		</table>
+	</div>
+
+{else}
+	<div style="margin:20px 0; font-size:16px; color:red;">Посищений за указанный период нет...</div>
+{/if}

@@ -1,0 +1,37 @@
+.auth_block_container {
+  width:320px;
+  margin-top:100px;
+}
+
+.auth_block {
+  padding:20px;
+  background-color:#FFF;
+  border:2px solid #E5E5E5;
+  border-radius:7px;
+  box-shadow:0 0 15px 0 #E5E5E5;
+}
+
+.auth_row, .form_row {
+  margin:10px 0;   
+}
+
+#login_form input  {
+  font-size:18px;
+}
+
+.loginsave {
+  position:relative;
+  height:35px;
+  line-height:35px;
+}
+
+.remember {
+  position:relative;
+  margin-top:-15px;
+}
+
+.login_btn {
+  position:absolute;
+  top:0;
+  right:0;
+}

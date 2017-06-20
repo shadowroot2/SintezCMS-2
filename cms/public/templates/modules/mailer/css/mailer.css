@@ -1,0 +1,106 @@
+#mailer_planed_params {
+  display:none;
+}
+
+#mailer_planed_params .desc {
+  font-style:italic;
+  color:red;
+}
+
+#mailer_planed_date, #mailer_planed_time {
+  text-align:center;
+}
+
+#mailer_planed_date {
+  width:75px;
+}
+
+#mailer_planed_time {
+  width:40px;
+}
+
+#mailer_text, #mailer_template_text {
+  height:400px;
+}
+
+#mailer_form, #mailer_template, #mailer_template_add, #mailer_template_edit {
+  width:550px;
+}
+
+.mailer_replacements {
+  margin:10px 0;
+}
+
+.mailer_replacements li {
+  list-style:none;
+  margin-bottom:10px;
+}
+
+#muploadInfo {
+  color:red;
+}
+
+#muploadControl {
+  position:relative;
+}
+
+#attach_list {
+  margin:5px 25px;
+}
+
+#attach_list li {
+  margin:3px 0;
+}
+
+.swfupload {
+  position:absolute;
+  top:0;
+  left:0;
+  z-index:999;
+}
+
+#attach_btn {
+  position:relative;
+  height:25px;
+  width:125px;
+  border:1px solid #003C74;
+  border-radius: 3px;
+  background:#F2F2ED;
+  background:-moz-linear-gradient(90deg, #ECEBE6, #fff);
+  background:-webkit-linear-gradient(90deg, #ECEBE6, #fff);
+  background:-o-linear-gradient(90deg, #ECEBE6, #fff);
+  background:-ms-linear-gradient(90deg, #ECEBE6, #fff);
+  background:linear-gradient(90deg, #ECEBE6, #fff);
+  cursor:pointer;
+  z-index:990;
+}
+
+#attach_btn .btn_title {
+  position:absolute;
+  top:2px;
+  left:20px;
+  font-size:14px;
+  text-align:center;
+  color:#414C52;
+  z-index:990;
+}
+
+#attach_btn .progress {
+  display:none;
+  height:100%;
+  border-right:1px solid #01ADEC;
+  width:0px;
+  background:-moz-linear-gradient(90deg, #38C8FE, #CEF1FF);
+  background:-webkit-linear-gradient(90deg, #38C8FE, #CEF1FF);
+  background:-o-linear-gradient(90deg, #38C8FE, #CEF1FF);
+  background:-ms-linear-gradient(90deg, #38C8FE, #CEF1FF);
+  background:linear-gradient(90deg, #38C8FE, #CEF1FF);
+}
+
+.add {
+  margin-top:10px;
+}
+
+#mail_templates_table {
+  width:500px;
+}

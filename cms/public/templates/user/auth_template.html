@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+	<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+	<title>Авторизация</title>
+	<link href="{?_TPL_}css/style.css" rel="stylesheet" type="text/css" />
+	<link href="{?_TPL_}user/user.css" rel="stylesheet" type="text/css" />
+	<script type="text/javascript" src="{?_TPL_}jquery.js"></script>
+	<script type="text/javascript" src="{?_TPL_}user/user.js"></script>
+</head>
+
+<body lang="ru">
+	<noindex>
+	<div align="center">
+		<form id="login_form" action="#">
+			<section class="auth_block_container">
+				<div id="infobox"></div>
+				<div class="auth_block" align="left">
+					<h1>Авторизация</h1>
+					<div class="auth_row">
+						<div>Логин:</div>
+						<div><input type="text" id="login" value="" maxlength="20" placeholder="Введите логин" required /></div>
+					</div>
+					<div class="auth_row">
+						<div>Пароль:</div>
+						<div><input type="password" id="pass" value="" maxlength="20" placeholder="Введите пароль" autocomplete="off" required /></div>
+					</div>
+					<div class="auth_row loginsave">
+						<input type="checkbox" id="remember" /> <span class="remember">Оставаться в системе</span>
+						<div id="login_btn" class="login_btn"><input type="submit" value="Войти" /></div>
+					</div>
+				</div>
+			</section>
+		</form>
+	</div>
+	</noindex>
+</body>
+</html>

@@ -1,0 +1,128 @@
+.cms_add:hover, .cms_edit:hover, .cms_remove:hover {
+  position:relative;
+  background:rgba(99,99,99,0.1);
+}
+
+.cms_add:hover > .cms_panel, .cms_edit:hover > .cms_panel, .cms_remove:hover > .cms_panel {
+  display:block;
+}
+
+.cms_panel {
+  display:none;
+  position:absolute;
+  top:0;
+  right:0;
+  height:20px;
+  padding:3px 5px;
+  background:#E6E6E6;
+  border:1px solid #CFCFE0;
+  white-space:nowrap;
+}
+
+.cms_panel a {
+  display:block;
+  float:left;
+  width:20px;
+  height:20px;
+  margin:0 3px;
+  background-color:transparent;
+  background-repeat:no-repeat;
+  background-position:center center;
+  -webkit-box-sizing:inherit !important;
+  -moz-box-sizing:inherit !important;
+  box-sizing:inherit !important;
+}
+
+.cms_panel a.cms_add_btn {
+  background-image:url('/cms/images/add.png');
+}
+
+.cms_panel a.cms_edit_btn {
+  background-image:url('/cms/images/edit.png');
+}
+
+.cms_panel a.cms_remove_btn {
+  background-image:url('/cms/images/del.png');
+}
+
+/* ‘Œ–Ã€ */
+.cms-modal {
+  display:none;
+  position:relative;
+}
+
+.cms-modal iframe {
+  position:absolute;
+  top:0;
+  left:0;
+}
+
+.cms-modal .formfield {
+  margin:10px 0;
+  padding:0;
+}
+
+.cms-modal .formfield .formtitle {
+  position:relative;
+  margin-bottom:5px;
+  font:bold 14px/20px Verdana, Arial, Tahoma;
+}
+
+.cms-modal .formfield .formtitle a {
+  position:absolute;
+  top:3px;
+  right:5px;
+  font:12px/20px Verdana;
+}
+
+.cms-modal input[type="text"], .cms-modal input[type="password"], .cms-modal input[type="number"], .cms-modal textarea, .cms-modal select {
+  width:250px;
+  padding:5px 10px;
+  border:1px solid #CFCFE0;
+  border-radius:5px;
+  background-color:#F5F5F5;
+  font:14px/22px Arial;
+  font: inherit;
+  color:#5E6161;
+}
+
+.cms-modal select {
+  padding:5px 5px 0 5px;
+}
+
+.cms-modal select option {
+  padding:2px 5px;
+}
+
+.cms-modal input[type="text"]:focus, .cms-modal input[type="password"]:focus, .cms-modal input[type="number"]:focus, .cms-modal textarea:focus {
+  border-color:#01ADEC;
+}
+
+.cms-modal input[type="checkbox"] {
+  margin-left:5px;
+}
+
+.cms-modal input[type="submit"]{
+  padding:5px 20px;
+  font-size:14px;
+}
+
+.cms-modal .required {
+  border-color:#FF5656 !important;
+}
+
+.cms-modal .formfield {
+  margin:10px 0;
+}
+
+.cms-modal .formfield input[type=text], .cms-modal .formfield input[type=password], .cms-modal .formfield textarea {
+  width:530px;
+}
+
+.cms-modal .google-map-container {
+  margin-top:10px;
+}
+
+.cmd-modal-top {
+  z-index:9000 !important;
+}

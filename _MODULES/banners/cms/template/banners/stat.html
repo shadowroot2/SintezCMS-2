@@ -1,0 +1,61 @@
+<h1>{$page_title}</h1>
+
+<form id="filter_form" name="filter" action="{?_MODULES_}banners" method="GET">
+	<div class="block search_form" style="width:660px">
+		<div class="header">Фильтр</div>
+		<div class="block_in">
+			{if (!$personal)}
+			<select name="city" style="width:135px;">
+				{foreach ($citys as $c)}
+				<option value="{$c.id}"{if ($c.set)} selected{/if}>{$c.name}</option>
+				{/foreach}
+			</select>&nbsp;
+			{/if}
+			Период с <input type="text" id="date_s" name="date_s" value="{$date_s}" style="width:90px;" readonly="readonly" /> по
+			<input type="text" id="date_e" name="date_e" value="{$date_e}" style="width:90px;" readonly="readonly" />&nbsp;
+			<input type="submit" value="Сформировать" />
+		</div>
+	</div>
+
+	<div class="filter_block" style="width:660px; height:25px; line-height:25px; margin:20px 0;">
+		<div style="font-size:14px;">Всего баннеров: <b>{?intval($total_count)}</b></div>
+	</div>
+</form>
+
+{if (!empty($banners_stat))}
+	<div class="infotable_container" style="width:660px;">
+		<table width="100%" cellspacing="1" class="infotable">
+			<colgroup>
+				<col width="*" />
+				<col width="80" />
+				<col width="120" />
+				<col width="120" />
+				<col width="80" />
+			</colgroup>
+			<thead>
+				<tr>
+					<th>Баннер</th>
+					<th>Статус</th>
+					<th>Показов</th>
+					<th>Кликов</th>
+					<th>CTR%</th>
+				</tr>
+			</thead>
+			<tbody>
+			{foreach ($banners_stat as $bs)}
+				<tr>
+					<td>
+						<a href="{?_MODULES_}objects/edit/{$bs.banner_id}" title="Редактировать"><b>{$banners[$bs['banner_id']]['name']}</b></a>
+					</td>
+					<td align="center">{if ($banners[$bs['banner_id']]['active'])}<span style="color:green;">Активен</span>{else}<span style="color:red;">Отключен</span>{/if}</td>
+					<td align="right">{?number_format($bs.shows, 0, '.', ' ')}</td>
+					<td align="right">{?number_format($bs.clicks, 0, '.', ' ')}</td>
+					<td align="center">{?number_format(((intval($bs.clicks) / intval($bs.shows)) * 100), 2, '.', ' ')}</td>
+				</tr>
+			{/foreach}
+			</tbody>
+		</table>
+	</div>
+{else}
+	<div style="margin:20px 0; font-size:16px; color:red;">По вашем запросу ничего не найдено...</div>
+{/if}

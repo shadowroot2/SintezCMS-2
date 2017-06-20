@@ -1,0 +1,70 @@
+body {
+  margin-top:40px !important;
+}
+
+#cms_header {
+  position:fixed;
+  top:0;
+  left:0;
+  height:40px;
+  width:100%;
+  background-color:#E6E6E6;
+  border-bottom:1px solid #E3E3E3;
+  box-shadow: 0 0 15px 0 #c0c0c0;
+  font:12px/20px Verdana;
+  color:#413F42;
+  z-index:8000;
+}
+
+#cms_header .cms_header_in {
+  position:relative;
+  height:40px;
+}
+
+#cms_header .cms_name {
+  position:absolute;
+  left:15px;
+  top:5px;
+  padding-bottom: 10px;
+  font: 25px/27px Arial;
+  color:#413F42;
+}
+
+#cms_header .cms_name span {
+  color:red;
+}
+
+#cms_header .cms_user_head {
+  position:absolute;
+  right:20px;
+  top:8px;
+  height:24px;
+}
+
+#cms_header .cms_user_head a {
+  display:inline-block;
+  font:12px/24px Verdana;
+  outline:medium none;
+  text-decoration:none;
+  color:#0D72C8;
+}
+
+#cms_header .cms_user_head a:hover {
+  text-decoration:underline;
+  color:#0D72C8;
+}
+
+#cms_header .cms_toggle {
+  width:69px;
+  margin:0 20px;
+  background:transparent url('/cms/images/toggle.png') no-repeat;
+  text-indent:-1000em;
+}
+
+#cms_header .cms_toggle.on {
+  background-position:left center;
+}
+
+#cms_header .cms_toggle.off {
+  background-position:right center;
+}

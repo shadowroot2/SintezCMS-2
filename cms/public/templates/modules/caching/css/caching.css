@@ -1,0 +1,35 @@
+.cache_info {
+  margin:15px 0;
+}
+
+.cache_info div {
+  margin:10px 0;
+}
+
+.confirm_clear {
+    font: 18px/25px Arial;
+    margin-top: 30px;
+}
+
+.confirm_clear div {
+    margin-bottom: 20px;
+}
+
+.confirm_clear input {
+    width: 100px;
+}
+
+.cache_cleared {
+  margin: 30px 0;
+  font: italic 18px/22px Arial;
+  color: green;
+}
+
+#memcached_params {
+  list-style:none;
+  padding-left:30px;
+}
+
+#memcached_params  li {
+  margin-bottom:5px;
+}

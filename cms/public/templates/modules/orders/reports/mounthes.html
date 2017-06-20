@@ -1,0 +1,67 @@
+<ul id="reports_menu">
+{foreach ($reports_menu as $m)}
+	<li{if ($m.set)} class="set"{/if}><a href="{?_MODULES_}{$m.url}">{$m.name}</a></li>
+{/foreach}
+</ul>
+
+<h1>{$page_title}</h1>
+
+{if (!$personal)}
+<form id="order_reports_city_form" method="GET">
+	<div class="block search_form" style="width:300px">
+		<div class="block_in">
+			Город: <select id="order_reports_city" name="city" style="width:200px">
+			{if (!empty($citys))}
+				{foreach ($citys as $c)}
+					<option value="{$c.id}"{if ($c.set)} selected{/if}>{$c.name}</option>
+				{/foreach}
+			{/if}
+			</select>
+		</div>
+	</div>
+</form>
+{/if}
+
+{if (!empty($mounthes_report))}
+	<div id="chart" style="width:600px; height:200px;"></div>
+	<div id="mounthes_report_table" class="infotable_container" style="width:600px;">
+		<table class="infotable" width="100%" cellspacing="1">
+			<colgroup>
+				<col width="*" />
+				<col width="150" />
+				<col width="150" />
+				<col width="150" />
+			</colgroup>
+			<thead>
+				<tr>
+					<th>Месяц</th>
+					<th>Кол-во зак.</th>
+					<th>Сумма зак.</th>
+					<th>Ср.сумма зак.</th>
+				</tr>
+			</thead>
+			<tbody>
+			{!$chart = array()}
+			{foreach ($mounthes_report as $year=>$mounthes)}
+				<tr>
+					<td colspan="4"><b style="font-size:14px">{$year}</b></td>
+				</tr>
+				{foreach ($mounthes as $month=>$report)}
+					<tr>
+						<td align="center"><a href="{$report.url}">{$month}</a></td>
+						<td align="right">{$report.count}</td>
+						<td align="right">{$report.sum_txt} тг</td>
+						<td align="right">{$report.avg} тг</td>
+					</tr>
+					{!$chart[] = "['$year-".$report['cm']."-30', ".$report['sum']."]"}
+				{/foreach}
+			{/foreach}
+			</tbody>
+		</table>
+	</div>
+	<script type="text/javascript">
+		var _CHART_ = {?(!empty($chart) ? '['.join(',', $chart).']' : 'null' )};
+	</script>
+{else}
+	<div style="margin:20px 0; font-size:16px; color:red;">Отчет не построен...</div>
+{/if}

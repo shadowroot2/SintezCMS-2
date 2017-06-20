@@ -1,0 +1,4 @@
+<Files ~ ".*\.(php|html)$">
+    Order allow,deny
+    Allow from all
+</Files>

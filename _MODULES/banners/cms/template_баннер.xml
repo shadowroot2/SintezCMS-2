@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<sintez_template version="1.0">
+	<name>Баннер</name>
+	<desc>Для организации баннерной рекламы на сайте</desc>
+	<fields>
+		<field>
+				<name>Название</name>
+				<type>text</type>
+				<atribute></atribute>
+		</field>
+		<field>
+				<name>Ссылка</name>
+				<type>text</type>
+				<atribute></atribute>
+		</field>
+		<field>
+				<name>В новом окне</name>
+				<type>checkbox</type>
+				<atribute></atribute>
+		</field>
+		<field>
+				<name>Изображение</name>
+				<type>image</type>
+				<atribute></atribute>
+		</field>
+		<field>
+				<name>HTML</name>
+				<type>html</type>
+				<atribute></atribute>
+		</field>
+		<field>
+				<name>Начать показ</name>
+				<type>date</type>
+				<atribute></atribute>
+		</field>
+		<field>
+				<name>Окончить показ</name>
+				<type>date</type>
+				<atribute></atribute>
+		</field>
+		<field>
+				<name>Лимит показов</name>
+				<type>integer</type>
+				<atribute></atribute>
+		</field>
+		<field>
+				<name>Лимит переходов</name>
+				<type>integer</type>
+				<atribute></atribute>
+		</field>
+		<field>
+				<name>Показов</name>
+				<type>integer</type>
+				<atribute></atribute>
+		</field>
+		<field>
+				<name>Переходов</name>
+				<type>integer</type>
+				<atribute></atribute>
+		</field>
+	</fields>
+</sintez_template>

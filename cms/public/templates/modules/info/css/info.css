@@ -1,0 +1,18 @@
+.core_info, .listing {
+  list-style:none;
+  margin-top:15px;
+}
+
+.core_info {
+  font-size:14px;
+}
+
+.core_info li {
+  margin-bottom:10px;
+}
+
+.listing li {
+  margin-bottom:15px;
+  padding-left:25px;
+  background:transparent url('/cms/images/module.png') no-repeat 4px 9px;
+}

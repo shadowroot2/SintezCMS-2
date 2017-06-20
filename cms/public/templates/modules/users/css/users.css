@@ -1,0 +1,46 @@
+.actions {
+  margin-top:10px;
+}
+
+.infotable_container {
+  width:650px;
+}
+
+.actions {
+  position:relative;
+  height:20px;
+}
+
+
+td.access {
+   font-size:12px;
+}
+
+#group_add, #group_edit {
+  width:650px;
+}
+
+#user_add, #user_edit {
+  width:400px;
+}
+
+#group_add input[type="text"], #group_edit input[type="text"] {
+  width:627px;
+}
+
+#user_add input[type="text"], #user_add input[type="password"], #user_edit input[type="text"], #user_edit input[type="password"] {
+  width:370px;
+}
+
+#group_module_params {
+  width:350px;
+  height:70px;
+}
+
+#group_access_add_status {
+  margin-top:10px;
+}
+
+#user_group {
+  width:250px;
+}

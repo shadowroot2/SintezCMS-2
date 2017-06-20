@@ -1,0 +1,79 @@
+<h1>{$page_title}</h1>
+
+<form id="filter_form" action="{?_MODULES_}site_users/{$prefix}" method="get">
+	<div class="block search_form">
+		<div class="header">Поиск по пользователям сайта</div>
+		<div class="block_in">
+			<input type="text" id="search" name="search" value="{$search}" placeholder="ID, имя или e-mail..." />&nbsp;
+			<select id="status" name="status">				
+				<option value="">Все статусы</option>
+				{foreach ($statuses as $key=>$s)}
+				<option value="{$key}"{if ($key === $status)} selected="selected"{/if}>{$s.name}</option>
+				{/foreach}
+			</select>&nbsp;			
+			{if (!$personal)}
+			<select id="city" name="city">				
+				<option value="">Все города</option>
+				{foreach ($citys as $c)}
+				<option value="{$c.id}"{if ($c.id == $city)} selected="selected"{/if}>{$c.name}</option>
+				{/foreach}
+			</select>&nbsp;
+			{/if}
+			<input type="submit" value="Поиск" />
+		</div>
+	</div>
+	
+	<section class="actions_block">
+		<div class="toolbar">
+			{if ($search != '')}Найдено{else}Всего{/if} пользователей: <b>{$users_count}</b>
+		</div>
+		<div class="pagesbar">
+			На страницу <select class="onpage" name="perpage" style="width:60px; text-align:center; background-color:#fff;" onchange="$('#filter_form').submit();">
+			{foreach($perpages as $per)}
+				<option value="{$per}"{if ($per == $perpage)} selected="selected"{/if}>{$per}</option>
+			{/foreach}
+			</select>
+		</div>
+	</section>
+</form>
+
+{if (count($users))}
+<section id="site_users_table" class="infotable_container">
+	<table class="infotable" width="100%" cellspacing="1">
+		<colgroup>
+			<col width="83" />
+			<col width="*" />
+			<col width="300" />
+			{if (!$readonly)}<col width="100" />{/if}
+		</colgroup>
+		<thead>
+			<tr>
+				<th>ID</th>
+				<th>Имя</th>
+				<th>E-mail</th>
+				{if (!$readonly)}<th>*</th>{/if}
+			</tr>
+		</thead>
+		<tbody>
+		{foreach($users as $o)}
+			<tr{if (empty($o.active))} class="disabled"{/if} rel="{$o.id}">
+				<td align="right">{$o.id}</td>
+				<td>
+					<a href="{?_MODULES_}orders/?u={$o.id}" title="Заявки пользователя">{$o.name}</a>
+				</td>
+				<td>{$o.email}</td>
+				{if (!$readonly)}
+				<td align="center">
+					<a href="{?_MODULES_}objects/edit/{$o.id}" title="Редактировать пользователя"><img src="{?_CMS_}images/edit.png" /></a>&nbsp;
+					<a class="switch" href="#"><img src="{?_CMS_}images/{$o.status}.png" title="{$o.status_text}" /></a>&nbsp;
+					<a class="remove" href="#" title="Удалить"><img src="{?_CMS_}images/del.png" /></a>
+				</td>
+				{/if}
+			</tr>
+		{/foreach}
+		</tbody>
+	</table>
+</section>
+{else}
+<div class="nothink">Пользователи не найдены по указанному фильтру...</div>
+{/if}

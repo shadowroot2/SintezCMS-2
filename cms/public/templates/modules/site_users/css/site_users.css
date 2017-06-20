@@ -1,0 +1,50 @@
+.search_form {
+  width:800px;
+}
+
+#search {
+  width:270px;
+}
+
+#status {
+  width:150px;
+}
+
+#city {
+  width:200px;
+}
+
+.actions_block {
+  margin-top:20px;
+}
+
+.actions_block {
+  height:30px;
+  position:relative;
+}
+
+.actions_block .toolbar {
+  font-size:14px;
+}
+
+.actions_block .pagesbar {
+  position:absolute;
+  right:0;
+  top:0;
+}
+
+#date_s, #date_e {
+  width:90px;
+  text-align:center;
+}
+
+#site_users_table .new a {
+  padding-left:20px;
+  font-weight:bold;
+  background:transparent url('/cms/images/new.png') no-repeat left center;
+}
+
+.notice {
+  font-style:italic;
+  color:red;
+}

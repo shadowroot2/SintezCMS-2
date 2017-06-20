@@ -1,0 +1,40 @@
+.actions {
+  margin-top:10px;
+}
+
+#run_frame {
+  position:absolute;
+  width:0;
+  height:0;
+  border:0;
+}
+
+.cron_info {
+  width:800px;
+  margin:30px 0;
+  font:14px/20px Verdana;
+  color:#817C83;
+}
+
+#cron_add, #cron_edit {
+  width:550px;
+}
+
+.infotable td.small {
+  font:11px/15px Verdana;
+  text-align:center;
+}
+
+#cron_start_date {
+  width:80px;
+  text-align:center;
+}
+
+#cron_start_time {
+  width:45px;
+  text-align:center;
+}
+
+#cron_contoller {
+  width:250px;
+}
